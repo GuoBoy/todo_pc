@@ -1,0 +1,33 @@
+[package]
+name = "todo"
+version = "2.0.1"
+description = "My todo app"
+authors = [ "gzh",]
+license = ""
+repository = ""
+edition = "2021"
+rust-version = "1.68"
+
+[dependencies]
+serde_json = "1.0"
+
+[features]
+default = [ "custom-protocol",]
+custom-protocol = [ "tauri/custom-protocol",]
+
+[dependencies.serde]
+version = "1.0"
+features = [ "derive",]
+
+[dependencies.tauri]
+version = "1.2"
+features = [ "api-all",]
+
+[dependencies.tauri-plugin-sql]
+git = "https://github.com/tauri-apps/plugins-workspace"
+branch = "dev"
+features = [ "sqlite",]
+
+[build-dependencies.tauri-build]
+version = "1.2"
+features = []
